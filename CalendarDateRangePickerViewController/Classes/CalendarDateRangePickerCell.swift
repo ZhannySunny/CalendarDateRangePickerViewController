@@ -11,7 +11,7 @@ import UIKit
 class CalendarDateRangePickerCell: UICollectionViewCell {
     
     private let defaultTextColor = UIColor.black
-    private let highlightedColor = UIColor(white: 0.9, alpha: 1.0)
+    private let highlightedColor = UIColor(red: 47/255.0, green: 212/255.0, blue: 191/255.0, alpha: 1.0)
     private let disabledColor = UIColor.lightGray
     
     var selectedColor: UIColor!

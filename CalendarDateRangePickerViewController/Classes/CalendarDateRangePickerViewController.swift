@@ -217,9 +217,18 @@ extension CalendarDateRangePickerViewController {
     
     func getWeekdayLabel(weekday: Int) -> String {
        
-        var calendar = Calendar.autoupdatingCurrent
-        calendar.locale = Locale(identifier: "ru_RU") 
-        return calendar.veryShortWeekdaySymbols[weekday]
+        var components = DateComponents()
+        components.calendar = Calendar(identifier: .gregorian)
+        components.calendar?.firstWeekday = 2
+        components.weekday = weekday
+            let date = Calendar.current.nextDate(after: Date(), matching: components, matchingPolicy: Calendar.MatchingPolicy.strict)
+            if date == nil {
+                return "E"
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEEE"
+            return dateFormatter.string(from: date!)
+        }
     }
     
     func getWeekday(date: Date) -> Int {

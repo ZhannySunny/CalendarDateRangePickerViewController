@@ -225,7 +225,6 @@ extension CalendarDateRangePickerViewController {
             return "E"
         }
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.autoupdatingCurrent
         dateFormatter.dateFormat = "EEEEE"
         return dateFormatter.string(from: date!)
     }

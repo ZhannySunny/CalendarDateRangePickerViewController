@@ -218,8 +218,8 @@ extension CalendarDateRangePickerViewController {
     func getWeekdayLabel(weekday: Int) -> String {
        
         var calendar = Calendar.autoupdatingCurrent
-        calendar.locale = Locale(identifier: "ru_RU") // Or any other locale, if you wan current, just drop this line
-           // TODO: ↑
+        calendar.firstWeekday = 2
+        calendar.locale = Locale(identifier: "ru_RU")
         return calendar.veryShortStandaloneWeekdaySymbols[weekday - 1]
     }
     
